@@ -9,7 +9,7 @@ A REST endpoint that accept a list of meal IDs an return the Id of the meal  tha
 2. clone the repo <br>
 3. CD to the Project Directory then <br>
 4. run `docker build -t mealdb-web-service . `<br>
-5. To start your container run `docker run -p 8080:8080 mealdb-web-service`
+5. To start your container run `docker run -p 8080:4000 mealdb-web-service`
 6. Head over to your Browser and enter http://localhost:8080 <br>
 7. You should see your mealdb web service running docker container running
 
