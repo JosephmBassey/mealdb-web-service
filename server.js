@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
                         Note: ` 'mealId' should be substituted for meal Id from www.themealdb.com, for multiple separate with ',' e.g ${req.hostname}/api/v1/getmeals/52892,52850,52876`
 });
 });
-app.listen(process.env.PORT, () => {
-  console.log(`Server Runining On port ${process.env.PORT}`);
+app.listen(8080, () => {
+  console.log(`Server Runining On port 8080`);
 });
 
 //Run app, then load http://localhost:port in a browser to see the output.

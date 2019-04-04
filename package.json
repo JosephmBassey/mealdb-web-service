@@ -4,17 +4,15 @@
   "description": "A Simple web service that accept Meal IDs  and return the ID of the meal with list ingredient to prepare using themealdb API",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Joseph Bassey",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
-    "morgan": "^1.9.1",
     "node-fetch": "^2.3.0"
   }
 }
