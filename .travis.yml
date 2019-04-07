@@ -4,7 +4,7 @@ service:
 before_install:
   - docker build -t mealdb-web-service .
 script:
-  - docker run  mealdb-web-service -- --coverage
+  - docker run  mealdb-web-service 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
