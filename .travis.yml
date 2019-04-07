@@ -1,0 +1,19 @@
+sudo: required
+service:
+  - docker
+before_install:
+  - docker build -t mealdb-web-service .
+script:
+  - docker run  mealdb-web-service
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "mealdb-web-service"
+  env: " mealdb-web-service-env"
+  bucket_name: "elasticbeanstalk-us-east-1-773213525064"
+  bucket_path: "mealdb-web-service"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
