@@ -16,7 +16,7 @@ module.exports = {
         const json = await response.json();
         if (json.meals == null) {
           res.status(401).json({
-            "error": `Please Provide a valid mealId  or visit www.themealdb.com to get mealId .`
+            "error": `Please Provide a valid mealId  or visit http://www.themealdb.com to get mealId .`
           })
         }
         mealData.push(...json.meals);
@@ -25,9 +25,10 @@ module.exports = {
       mealData.map((item, index) => {
         let keys = Object.keys(item);
         let count = 0;
-        keys.map((key, keyIndex) => {
-          if (keyIndex > 1 && item[key] !== "")
-            count++;
+        keys.map((key,keyIndex)=>{
+          if(key.match(/strIngredient/g) && keyIndex > 1 && item[key] !== "" ){
+               count++;
+           }
         })
         if (count <= lowerBound) {
           lowerBound = count;
@@ -36,6 +37,7 @@ module.exports = {
       })
       res.status(200).json({
         "Meal Id with least Ingredient ": mealID,
+        mealData
       })
     } catch (error) {
       res.status(401).json({
